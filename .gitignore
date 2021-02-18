@@ -1,2 +1,6 @@
 env/
 .vscode/
+
+/* In app directory. */
+app/__pycache__/
+
