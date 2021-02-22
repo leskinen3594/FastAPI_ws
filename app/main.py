@@ -1,11 +1,24 @@
 from typing import Optional, List
 
 from fastapi import FastAPI, WebSocket, Request, Cookie, Depends, Query, status, WebSocketDisconnect
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins= origins,
+    allow_credentials= True,
+    allow_methods= ["*"],
+    allow_headers=["*"],
+)
 
 class ConnectionManager:
     # บันทึก Client ที่ออนไลน์ไว้ใน list
