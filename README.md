@@ -1,4 +1,4 @@
-# FastAPI_wb
+# FastAPI_ws
 WebSocket with FastAPI  and Google cloud translation
 
 ขั้นตอนการใช้งาน
